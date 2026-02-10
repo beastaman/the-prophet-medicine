@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Prophet's Medicine | Sunnah-Based Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Custom Favicon: Red Box with P -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='white'/%3E%3Crect x='4' y='4' width='56' height='56' fill='none' stroke='%23D32F2F' stroke-width='4'/%3E%3Crect x='12' y='12' width='40' height='40' fill='none' stroke='%23D32F2F' stroke-width='1' opacity='0.5'/%3E%3Ctext x='32' y='46' font-family='serif' font-weight='bold' font-size='32' fill='%23D32F2F' text-anchor='middle'%3EP%3C/text%3E%3C/svg%3E">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Cormorant Garamond"', 'serif'],
+              display: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            colors: {
+              paper: {
+                DEFAULT: '#FFFFFF', // Pure White
+                dark: '#FAFAFA',    // Very subtle gray for sectioning
+                light: '#FFFFFF'    // Pure White
+              },
+              ink: {
+                DEFAULT: '#000000', // Pure Black
+                light: '#262626',   // Dark Gray
+              },
+              seal: {
+                DEFAULT: 'var(--color-seal)', 
+                light: 'var(--color-seal-light)',
+                dark: 'var(--color-seal-dark)'
+              },
+              bronze: {
+                DEFAULT: '#000000', // Replaced Bronze with Black for high contrast
+                light: '#404040'
+              }
+            },
+            backgroundImage: {
+              'scroll-gradient': 'linear-gradient(to bottom, #FFFFFF 0%, #FAFAFA 100%)',
+              'ink-wash': 'radial-gradient(circle at center, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 70%)',
+            },
+            animation: {
+              'ink-spread': 'inkSpread 2s ease-out forwards',
+              'float-slow': 'float 8s ease-in-out infinite',
+              'fade-up-slow': 'fadeUp 1.5s ease-out forwards',
+              'slide-up-fade': 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-slow': 'pulseSlow 4s ease-in-out infinite',
+              'stamp-drop': 'stampDrop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+              'draw-path': 'drawPath 2.5s ease-out forwards',
+              'expand-width': 'expandWidth 0.8s ease-out forwards',
+            },
+            keyframes: {
+              inkSpread: {
+                '0%': { opacity: '0', filter: 'blur(10px)', transform: 'scale(0.9)' },
+                '100%': { opacity: '1', filter: 'blur(0)', transform: 'scale(1)' },
+              },
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideUpFade: {
+                 '0%': { opacity: '0', transform: 'translateY(10px)' },
+                 '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              expandWidth: {
+                '0%': { width: '0%' },
+                '100%': { width: '100%' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              pulseSlow: {
+                '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+                '50%': { opacity: '0.8', transform: 'scale(0.95)' },
+              },
+              stampDrop: {
+                '0%': { opacity: '0', transform: 'scale(3) rotate(-15deg)' },
+                '100%': { opacity: '1', transform: 'scale(1) rotate(-12deg)' },
+              },
+              drawPath: {
+                '0%': { strokeDasharray: '1000', strokeDashoffset: '1000' },
+                '100%': { strokeDasharray: '1000', strokeDashoffset: '0' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Default (Male) - Deep Clinical Red */
+        --color-seal: #D32F2F; 
+        --color-seal-light: #EF5350;
+        --color-seal-dark: #B71C1C;
+      }
+
+      .theme-female {
+        /* Female - Elegant Rose Pink */
+        --color-seal: #D81B60; 
+        --color-seal-light: #EC407A;
+        --color-seal-dark: #AD1457;
+      }
+
+      body {
+        background-color: #FFFFFF;
+        color: #000000;
+        cursor: none; /* Hidden for custom cursor */
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Fallback for touch devices */
+      @media (hover: none) and (pointer: coarse) {
+        body {
+          cursor: auto;
+        }
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Global Utility to hide scrollbars on specific elements */
+      .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      
+      .text-vertical {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+      }
+
+      /* Ink Drop Selection Color */
+      ::selection {
+        background: var(--color-seal);
+        color: #FFFFFF;
+      }
+
+      /* Custom Input Styles for Paper feel */
+      input, select, textarea {
+        background-color: transparent;
+      }
+      
+      /* Smooth anchor scrolling offset */
+      html {
+        scroll-padding-top: 100px;
+      }
+      
+      .reveal-text {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "firebase/": "https://esm.sh/firebase@^12.8.0/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

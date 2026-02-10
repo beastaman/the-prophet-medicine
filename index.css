@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@400;500;600;700;800;900&family=Amiri:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ink: #000000;
+    --color-paper: #FFFFFF;
+    --color-paper-light: #FAFAFA;
+    --color-sacred-red: #D32F2F;
+    --color-seal: #8b4513;
+    --color-seal-dark: #6b3410;
+    --color-pink: #EC407A;
+  }
+  
+  body {
+    font-family: 'Crimson Text', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-arabic {
+    font-family: 'Amiri', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Lato', sans-serif;
+  }
+  
+  .text-sacred {
+    color: var(--color-sacred-red);
+    font-weight: 700;
+  }
+  
+  .border-pink {
+    border-color: var(--color-pink) !important;
+  }
+  
+  .bg-pink {
+    background-color: var(--color-pink);
+  }
+  
+  .hover\:border-pink:hover {
+    border-color: var(--color-pink) !important;
+  }
+}
+
+/* Scrollbar hiding */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Selection color */
+::selection {
+  background: var(--color-sacred-red);
+  color: #FFFFFF;
+}
+
+/* Smooth scrolling with offset */
+html {
+  scroll-padding-top: 100px;
+  scroll-behavior: smooth;
+}
