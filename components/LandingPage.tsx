@@ -912,7 +912,7 @@ const LandingPage: React.FC = () => {
                     alt="Traditional Hijama Cupping Therapy" 
                     className="w-full max-w-md mx-auto rounded-sm shadow-2xl border-4 border-double border-ink/10"
                   />
-                  {/* Pending Approval Stamp */}
+                  {/* Pending Approval Stamp and changes */}
                   <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-paper border-2 border-seal rounded-full w-24 h-24 md:w-28 md:h-28 flex items-center justify-center transform rotate-12 shadow-lg">
                     <div className="text-center">
                       <div className="text-seal font-sans text-[8px] md:text-[9px] uppercase tracking-widest font-bold leading-tight">
